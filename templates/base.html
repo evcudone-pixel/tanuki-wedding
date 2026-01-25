@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ details.couple }} - Wedding</title>
+
+    <!-- Open Graph meta tags for link previews -->
+    <meta property="og:title" content="{{ details.couple }} - Wedding">
+    <meta property="og:description" content="Join us for our wedding on {{ details.date }} in {{ details.city }}">
+    <meta property="og:image" content="{{ url_for('serve_medium', filename='DSC_4032.jpg', _external=True) }}">
+    <meta property="og:type" content="website">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
