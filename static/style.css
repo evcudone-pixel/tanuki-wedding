@@ -58,7 +58,7 @@ body {
     text-align: center;
     padding: 18vh 2rem 2rem;
     background: linear-gradient(rgba(248, 246, 243, 0.15), rgba(248, 246, 243, 0.15)),
-                url('/photos/DSC_4032.jpg') center 35%/cover no-repeat;
+                url('/photos/medium/DSC_4032.jpg') center 35%/cover no-repeat;
 }
 
 .names-container {
