@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.venv/
+
+# Flask
+instance/
+*.db
+
+# Environment variables
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Large original photos (keep only optimized thumbnails/medium)
+/photos/*.jpg
+/photos/*.jpeg
+/photos/*.png
+/photos/*.gif
+!/photos/thumbnails/
+!/photos/medium/
+
+# Root level stray images
+/*.jpeg
+/*.jpg
+/*.png

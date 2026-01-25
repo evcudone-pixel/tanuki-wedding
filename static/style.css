@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #2c3e50;
+    --accent: #b8860b;
+    --light: #f8f6f3;
+    --text: #333;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: var(--text);
+    background-color: var(--light);
+    line-height: 1.6;
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.main-nav a {
+    color: #f5a020;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #d88a10;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 18vh 2rem 2rem;
+    background: linear-gradient(rgba(248, 246, 243, 0.15), rgba(248, 246, 243, 0.15)),
+                url('/photos/DSC_4032.jpg') center 35%/cover no-repeat;
+}
+
+.names-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'Lora', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #f5a020;
+    margin-top: 30px;
+    text-shadow:
+        -3px -3px 0 #fff,
+        -3px -3px 20px #fff,
+        -3px -3px 40px #fff,
+        0 0 60px #fff,
+        0 0 90px #fff;
+}
+
+.names-left,
+.names-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.names-left {
+    text-align: right;
+}
+
+.names-right {
+    text-align: left;
+}
+
+.hero .ampersand {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f5a020;
+    text-shadow:
+        -3px -3px 0 #fff,
+        -3px -3px 20px #fff,
+        -3px -3px 40px #fff,
+        0 0 60px #fff,
+        0 0 90px #fff;
+}
+
+.info-box {
+    background: #f5a020;
+    width: 280px;
+    height: 280px;
+    margin-top: 32rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .date {
+    font-size: 1.5rem;
+    letter-spacing: 0.3em;
+    color: #fff;
+    margin: 0 0 1rem;
+}
+
+.hero .venue {
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0.25rem 0;
+}
+
+.divider {
+    width: 60px;
+    height: 1px;
+    background: var(--accent);
+    margin: 2rem auto;
+}
+
+section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+#rsvp {
+    max-width: 100%;
+    background: url('/static/meadow.jpg') center/cover no-repeat;
+}
+
+#rsvp .rsvp-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#rsvp h2 {
+    color: white;
+}
+
+section h2 {
+    font-family: 'Lora', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #f5a020;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.rsvp-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: var(--primary);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    margin-top: 0.5rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: var(--accent);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #f5a020;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #d88a10;
+}
+
+.flash-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    background: var(--accent);
+    color: white;
+    z-index: 1000;
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    0%, 70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.guest-count-group {
+    display: none;
+}
+
+.guest-count-group.visible {
+    display: block;
+}
+
+/* Gallery styles */
+#gallery {
+    max-width: 1000px;
+    padding: 4rem 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: var(--accent);
+}
+
+/* Admin styles */
+.admin-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    flex: 1;
+}
+
+.stat-box .number {
+    font-size: 2.5rem;
+    color: var(--accent);
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.rsvp-table {
+    width: 100%;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.rsvp-table th,
+.rsvp-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.rsvp-table th {
+    background: var(--primary);
+    color: white;
+}
+
+.attending-yes { color: green; }
+.attending-no { color: #999; }
+
+/* Accommodations */
+#accommodations {
+    max-width: 600px;
+    padding: 4rem 2rem;
+}
+
+.accommodation-card {
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+}
+
+.accommodation-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.accommodation-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.accommodation-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.accommodation-address,
+.accommodation-phone {
+    color: #666;
+    margin: 0.25rem 0;
+}
+
+.accommodation-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background: #f5a020;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.accommodation-link:hover {
+    background: #d88a10;
+}
+
+/* Travel */
+#travel {
+    max-width: 600px;
+    padding: 4rem 2rem;
+}
+
+.travel-text {
+    background: white;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+.site-footer {
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-cat {
+    width: 150px;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .date {
+        font-size: 1.2rem;
+        letter-spacing: 0.15em;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .gallery-item {
+        border-radius: 2px;
+    }
+}

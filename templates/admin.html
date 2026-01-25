@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="admin-container">
+    <h2>RSVP Responses</h2>
+
+    <div class="stats">
+        <div class="stat-box">
+            <div class="number">{{ attending_count }}</div>
+            <div>Guests Attending</div>
+        </div>
+        <div class="stat-box">
+            <div class="number">{{ not_attending_count }}</div>
+            <div>Declined</div>
+        </div>
+        <div class="stat-box">
+            <div class="number">{{ rsvps|length }}</div>
+            <div>Total Responses</div>
+        </div>
+    </div>
+
+    {% if rsvps %}
+    <table class="rsvp-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Attending</th>
+                <th>Guests</th>
+                <th>Dietary</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rsvp in rsvps %}
+            <tr>
+                <td>{{ rsvp.name }}</td>
+                <td>{{ rsvp.email }}</td>
+                <td class="{{ 'attending-yes' if rsvp.attending else 'attending-no' }}">
+                    {{ 'Yes' if rsvp.attending else 'No' }}
+                </td>
+                <td>{{ rsvp.guest_count if rsvp.attending else '-' }}</td>
+                <td>{{ rsvp.dietary_restrictions or '-' }}</td>
+                <td>{{ rsvp.message or '-' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p style="text-align: center; color: #666;">No RSVPs yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
