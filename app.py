@@ -56,7 +56,8 @@ WEDDING_DETAILS = {
 
 @app.route('/')
 def index():
-    photos = sorted([f for f in os.listdir(PHOTOS_FOLDER)
+    thumbnails_folder = os.path.join(PHOTOS_FOLDER, 'thumbnails')
+    photos = sorted([f for f in os.listdir(thumbnails_folder)
                      if f.lower().endswith(('.jpg', '.jpeg', '.png', '.gif'))])
     return render_template('index.html', details=WEDDING_DETAILS, photos=photos)
 
