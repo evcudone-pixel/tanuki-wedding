@@ -474,6 +474,18 @@ section h2 {
     height: auto;
 }
 
+.admin-link {
+    display: block;
+    margin-top: 1rem;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.admin-link:hover {
+    color: #999;
+}
+
 @media (max-width: 600px) {
     .main-nav {
         flex-wrap: wrap;
