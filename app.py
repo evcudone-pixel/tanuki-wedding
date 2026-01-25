@@ -109,7 +109,8 @@ def view_rsvps():
     not_attending_count = sum(1 for r in rsvps if not r.attending)
     return render_template('admin.html', rsvps=rsvps,
                          attending_count=attending_count,
-                         not_attending_count=not_attending_count)
+                         not_attending_count=not_attending_count,
+                         details=WEDDING_DETAILS)
 
 
 with app.app_context():
