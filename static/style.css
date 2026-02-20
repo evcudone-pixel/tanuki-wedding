@@ -266,6 +266,102 @@ section h2 {
     display: block;
 }
 
+/* Schedule */
+#schedule {
+    max-width: 100%;
+    padding: 4rem 2rem;
+    background: url('/static/wildflowers2.jpg') center/cover no-repeat;
+}
+
+#schedule .schedule-days {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#schedule h2 {
+    color: white;
+}
+
+.schedule-days {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.schedule-day {
+    flex: 1;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.schedule-day-header {
+    background: #f5a020;
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.schedule-day-main .schedule-day-header {
+    background: var(--primary);
+}
+
+.schedule-day-content {
+    padding: 1.5rem;
+}
+
+.schedule-tbd {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+.schedule-event {
+    display: flex;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.schedule-event:last-child {
+    border-bottom: none;
+}
+
+.schedule-time {
+    font-weight: 500;
+    color: #f5a020;
+    white-space: nowrap;
+    min-width: 70px;
+}
+
+.schedule-desc {
+    color: var(--text);
+}
+
+.schedule-sunday-title {
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.schedule-lake-img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.schedule-sunday-text {
+    text-align: center;
+    color: #666;
+    line-height: 1.8;
+}
+
 /* Gallery styles */
 #gallery {
     max-width: 1000px;
@@ -463,6 +559,53 @@ section h2 {
     margin-bottom: 1rem;
 }
 
+/* Directions */
+.directions-container {
+    margin-top: 2rem;
+}
+
+.directions-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.directions-cards {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.directions-card {
+    flex: 1;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.directions-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.15);
+}
+
+.directions-img {
+    width: 100%;
+    display: block;
+}
+
+.directions-label {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 400;
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
 /* Footer */
 .site-footer {
     padding: 2rem;
@@ -533,5 +676,13 @@ section h2 {
 
     .gallery-item {
         border-radius: 2px;
+    }
+
+    .schedule-days {
+        flex-direction: column;
+    }
+
+    .directions-cards {
+        flex-direction: column;
     }
 }

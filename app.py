@@ -77,6 +77,11 @@ def serve_medium(filename):
     return send_from_directory(os.path.join(PHOTOS_FOLDER, 'medium'), filename)
 
 
+@app.route('/photos/directions/<filename>')
+def serve_directions(filename):
+    return send_from_directory(os.path.join(PHOTOS_FOLDER, 'directions'), filename)
+
+
 @app.route('/rsvp', methods=['POST'])
 def rsvp():
     name = request.form.get('name')

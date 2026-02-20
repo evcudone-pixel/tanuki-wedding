@@ -20,21 +20,6 @@
     </div>
 </div>
 
-<section id="gallery">
-    <div class="gallery-grid">
-        {% for photo in photos %}
-        <div class="gallery-item" onclick="openLightbox('{{ url_for('serve_medium', filename=photo) }}')">
-            <img src="{{ url_for('serve_thumbnail', filename=photo) }}" alt="Photo" loading="lazy">
-        </div>
-        {% endfor %}
-    </div>
-</section>
-
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="lightbox-close">&times;</span>
-    <img id="lightbox-img" src="" alt="Full size photo">
-</div>
-
 <section id="rsvp">
     <h2>RSVP</h2>
     <form class="rsvp-form" action="{{ url_for('rsvp') }}" method="POST">
@@ -81,6 +66,66 @@
     </form>
 </section>
 
+<section id="gallery">
+    <div class="gallery-grid">
+        {% for photo in photos %}
+        <div class="gallery-item" onclick="openLightbox('{{ url_for('serve_medium', filename=photo) }}')">
+            <img src="{{ url_for('serve_thumbnail', filename=photo) }}" alt="Photo" loading="lazy">
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Full size photo">
+</div>
+
+<section id="schedule">
+    <h2>Schedule</h2>
+    <div class="schedule-days">
+        <div class="schedule-day">
+            <div class="schedule-day-header">Friday</div>
+            <div class="schedule-day-content">
+                <p class="schedule-tbd">Rehearsal Dinner TBD</p>
+            </div>
+        </div>
+        <div class="schedule-day schedule-day-main">
+            <div class="schedule-day-header">Saturday</div>
+            <div class="schedule-day-content">
+                <div class="schedule-event">
+                    <span class="schedule-time">2:30 PM</span>
+                    <span class="schedule-desc">Wedding Party & Family Photos</span>
+                </div>
+                <div class="schedule-event">
+                    <span class="schedule-time">4:00 PM</span>
+                    <span class="schedule-desc">Ceremony</span>
+                </div>
+                <div class="schedule-event">
+                    <span class="schedule-time">4:30 PM</span>
+                    <span class="schedule-desc">Cocktail Hour</span>
+                </div>
+                <div class="schedule-event">
+                    <span class="schedule-time">5:30 PM</span>
+                    <span class="schedule-desc">Reception / Dinner</span>
+                </div>
+                <div class="schedule-event">
+                    <span class="schedule-time">All Night</span>
+                    <span class="schedule-desc">&#10024; Dancing &#10024;</span>
+                </div>
+            </div>
+        </div>
+        <div class="schedule-day">
+            <div class="schedule-day-header">Sunday</div>
+            <div class="schedule-day-content">
+                <p class="schedule-sunday-title">Sunday Funday</p>
+                <img src="{{ url_for('serve_directions', filename='lake.jpg') }}" alt="Lake activities" class="schedule-lake-img">
+                <p class="schedule-sunday-text">Hang out all day at the lake: kayak, paddle board, fish, jet-ski, swim, wake-board, water-ski, tube, boat, bbq</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="accommodations">
     <h2>Accommodations</h2>
     <div class="accommodation-card">
@@ -98,6 +143,24 @@
     <h2>Travel</h2>
     <p class="travel-text">Allegan MI is not the closest place to major airports. We can help coordinate rides from Chicago IL to Allegan MI to help with the travel. Text Evan or Peggy for help!</p>
     <p class="travel-text">Also, consider bringing a swimsuit just in case!</p>
+
+    <div class="directions-container">
+        <h3 class="directions-heading">Directions to the Venue</h3>
+        <div class="directions-cards">
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Chicago+Midway+International+Airport,+Chicago,+IL&destination=4091+Wildwood+Drive,+Allegan,+MI&travelmode=driving" target="_blank" class="directions-card">
+                <img src="{{ url_for('serve_directions', filename='Midway2Allegan.png') }}" alt="Directions from Chicago Midway Airport to Allegan" class="directions-img">
+                <div class="directions-label">Chicago Midway Airport (MDW)</div>
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&origin=O%27Hare+International+Airport,+Chicago,+IL&destination=4091+Wildwood+Drive,+Allegan,+MI&travelmode=driving" target="_blank" class="directions-card">
+                <img src="{{ url_for('serve_directions', filename='OHare2Allegan.png') }}" alt="Directions from O'Hare International Airport to Allegan" class="directions-img">
+                <div class="directions-label">O'Hare International Airport (ORD)</div>
+            </a>
+            <a href="https://www.google.com/maps/dir/?api=1&origin=Gerald+R.+Ford+International+Airport,+Grand+Rapids,+MI&destination=4091+Wildwood+Drive,+Allegan,+MI&travelmode=driving" target="_blank" class="directions-card">
+                <img src="{{ url_for('serve_directions', filename='GFord2Allegan.png') }}" alt="Directions from Gerald R. Ford Airport to Allegan" class="directions-img">
+                <div class="directions-label">Gerald R. Ford Airport (GRR)</div>
+            </a>
+        </div>
+    </div>
 </section>
 
 <footer class="site-footer">
